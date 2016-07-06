@@ -10,9 +10,13 @@
     	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
  
   <util:properties id="roleProperties" location="classpath:/roles.properties" />
- 
-  <bean id="userGroupCallback" class="org.jbpm.services.task.identity.JBossUserGroupCallbackImpl">
-    <constructor-arg name="userGroups" ref="roleProperties"></constructor-arg>
+	
+  <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:/OracleBusinessCentralDS"/>
+  </bean>	
+
+  <bean id="userGroupCallback" class="org.jbpm.services.task.identity.DBUserGroupCallbackImpl">
+    <constructor-arg name="config" ref="roleProperties"></constructor-arg>
   </bean>
  
   <bean id="definitionService" class="org.jbpm.kie.services.impl.bpmn2.BPMN2DataServiceImpl"/>

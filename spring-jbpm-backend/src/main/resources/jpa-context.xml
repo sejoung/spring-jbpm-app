@@ -18,5 +18,6 @@
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" depends-on="transactionManager">
       <property name="persistenceXmlLocation" value="classpath:/META-INF/jbpm-persistence.xml" />
 	</bean>
+	
 
 </beans>
