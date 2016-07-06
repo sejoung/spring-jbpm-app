@@ -68,3 +68,4 @@ Tomcat
     NOTE: this is an example for unix like systems for Windows $CATALINA_HOME needs to be replaced with windows env variable or absolute path
 
 4. use proper persistence.xml file - application comes with two persistence.xml files in web module, just use rename the default one to jboss and the other rename from tomcat to jbpm-persistence.xml and build the application and that should be all.
+5. 6.4 버전에 맞게 수정함 spring java config시에는 서비스가 정상적으로 올라오지 않음 다시 기존 xml으로 사용하니 정상 동작함 jbpm-executor 추가 필요
